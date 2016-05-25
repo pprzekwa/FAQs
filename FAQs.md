@@ -65,10 +65,12 @@ chmod +x cf-ssh
 
 Log on to the jumpbox and run the _dea_ads_ command.
 
-**Q: How can I access service created in Marketplace from my application?
+**Q: How can I access service created in Marketplace from my application?**<br />
 
 Firstly, you need to bind your application to the service. It can be done by running:
-	`cf bind-service your-app your-service
+
+	`cf bind-service your-app your-service`
+
 As a result credentials for the service instance will be delivered to the application runtime in environment variable named VCAP_SERVICES.
 In most cases restart or re-push of your application is required so the application could use VCAP_SERVICES.
 
