@@ -65,13 +65,17 @@ chmod +x cf-ssh
 
 Log on to the jumpbox and run the _dea_ads_ command.
 
-**Q: How can I access service created in Marketplace from my application?**<br />
+**Q: I created a service on Marketplace. How can I access it from my application?**<br />
 
 Firstly, you need to bind your application to the service. It can be done by running:
 
 	cf bind-service your-app your-service
 
 Then you need to restart or in some casese re-push you application. As a result credentials for the service instance can be delivered to the application runtime in environment variable named VCAP_SERVICES. For more explicit information see [the Cloud Foundry docs.] (http://docs.cloudfoundry.org/devguide/services/application-binding.html#bind)
+
+Below we append basic examples of bindings in some languages:
+
+* [Java with cloud connectors] (https://docs.cloudfoundry.org/buildpacks/java/spring-service-bindings.html#bind) <br>
 
 **Q: How do I view all the current logs within Cloud Foundry?**<br />
 
