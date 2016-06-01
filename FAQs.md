@@ -76,6 +76,8 @@ Then you need to restart or in some casese re-push you application. As a result 
 Below we append basic examples of bindings in some languages:
 
 * [Java with cloud connectors] (https://docs.cloudfoundry.org/buildpacks/java/spring-service-bindings.html#bind) <br>
+* [Golang] (https://github.com/trustedanalytics/application-broker/blob/3593eca396848e9fe67709df3fe8508d6d69fcd0/dao/mongo.go#L17-L51#bind) <br>
+* [Python] (https://github.com/trustedanalytics/data-catalog/blob/master/data_catalog/configuration.py#L30-L108#bind) <br>
 
 **Q: How do I view all the current logs within Cloud Foundry?**<br />
 
