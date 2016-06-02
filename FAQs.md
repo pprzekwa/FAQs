@@ -71,13 +71,15 @@ Firstly, you need to bind your application to the service. It can be done by run
 
 	cf bind-service your-app your-service
 
-Then you need to restart or in some casese re-push you application. As a result credentials for the service instance can be delivered to the application runtime in environment variable named VCAP_SERVICES. For more explicit information see [the Cloud Foundry docs.] (http://docs.cloudfoundry.org/devguide/services/application-binding.html#bind)
+Then you need to restart or in some cases re-push you application. As a result credentials for the service instance will be delivered to the application runtime in environment variable named VCAP_SERVICES. For more explicit information see [the Cloud Foundry docs.] (http://docs.cloudfoundry.org/devguide/services/application-binding.html#bind)
 
-Below we append basic examples of bindings in some languages:
+You can model your solution based on some of ours implementatuion examples:
 
-* [Java with cloud connectors] (https://docs.cloudfoundry.org/buildpacks/java/spring-service-bindings.html#bind) <br>
+* [Java] (https://github.com/trustedanalytics/user-management/blob/8fc3dd4bec931d446ab05a04dbd84b4a4049ed26/src/main/java/org/trustedanalytics/user/invite/config/StorageConfig.java#L90-L112#bind) <br>
 * [Golang] (https://github.com/trustedanalytics/application-broker/blob/3593eca396848e9fe67709df3fe8508d6d69fcd0/dao/mongo.go#L17-L51#bind) <br>
 * [Python] (https://github.com/trustedanalytics/data-catalog/blob/master/data_catalog/configuration.py#L30-L108#bind) <br>
+
+In case of Spring projects we also encourage to read [Cloud Foundry documentation] (https://docs.cloudfoundry.org/buildpacks/java/spring-service-bindings.html#bind)on this topic. <br>
 
 **Q: How do I view all the current logs within Cloud Foundry?**<br />
 
