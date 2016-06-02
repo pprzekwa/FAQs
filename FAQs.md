@@ -36,6 +36,16 @@ Here you can find some of our implementatuion examples:
 In case of Spring projects we also encourage you to read [Cloud Foundry documentation] (https://docs.cloudfoundry.org/buildpacks/java/spring-service-bindings.html#bind) on this topic. <br />
 
 **Q: How can I use the scoring engine API in my application?**<br />
+In order to start using scoring engine API in your application you need to create an instance of scoring engine service on Marketplace. A prerequisite is ATK model stored on HDFS of which path has to be passed as an additional parameter while creating scoring engine instance in the following way:
+
+* key: `TAR_ARCHIVE` 
+* value: `hdfs://path_to_model`
+
+Then you need to bind your application with scoring engine service, so that application could read current url base of scoring engine. Instructions on how to bind service instance to your application can be found in the previous subsection (Q: I created a service on Marketplace. How can I access it from my application?). 
+
+With all the steps above satisfied you can easily start querying scoring engine API under `<base_url>/v1/score?data={}` endpoint putting your data samples into brackets. Scoring engine will clasify whether your samples are anomalies and return you answer.
+
+To see sample use of scoring engine API in java application visit our [space-shuttle-demo repository] (https://github.com/trustedanalytics/space-shuttle-demo#creating-atk-model).
 
 **Q: My data is in a SQL database, how can I easily load it into TAP?**<br />
 You can schedule a data import from your SQL database. Please check [the data import section](Job-scheduler) for details.
@@ -231,6 +241,3 @@ For deleting a column there is drop_columns command:
 There are also flatten and unflatten commands when dealing with frames that let you spread data to multiple rows based upon a string delimiter.
 
       frame.flatten_columns(['b','c'], ',')
-
-
-  
