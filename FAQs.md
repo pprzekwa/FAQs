@@ -1,7 +1,44 @@
-> [Wiki Home](Home) ▸ **FAQs**
-
 
 ## Applications and Deployment FAQs
+
+**Q: How do I download my application's code bits after it's been deployed?**<br />
+Assumming you are an ORG admin or you have permissions to push apps to the org, then on Linux/Mac run this command from CF:<br />
+```
+curl -H "Authorization: `cf oauth-token|grep bearer`" http://api.<YOUR_TARGET_URI>/v2/apps/`cf app <YOUR_APP_NAME> --guid`/download > <YOUR_APP_NAME>.zip
+```
+Once the download is finished, the zip file contains code bits for your app.<br />
+You can also use the CF plugin "download" described here:<br />
+[https://github.com/ibmjstart/cf-download](https://github.com/ibmjstart/cf-download)<br />
+However this plugin fails to download protected files like application.conf in some situations.
+
+**Q: My Python based application requires some Python dependencies to be installed, how do I work around that?**<br />
+This is a very common scenario for apps to have dependencies. A great how to is described here:
+[https://github.com/cloudfoundry/python-buildpack](https://github.com/cloudfoundry/python-buildpack)
+
+**Q: I created a service on Marketplace. How can I access it from my application?**<br />
+Firstly, you need to bind your application to the service. It can be done by executing the following command:
+
+```
+cf bind-service your-app your-service
+```
+
+Then you need to restart or in very rare cases re-push you application. As a result credentials for the service instance will be delivered to the application runtime in environment variable named VCAP_SERVICES. For more explicit information read [the Cloud Foundry docs.] (http://docs.cloudfoundry.org/devguide/services/application-binding.html#bind)
+
+An ilustrated tutorial how to bind service to an application using TAP UI can be found under the following link: <br />
+https://github.com/trustedanalytics/platform-wiki-0.7/wiki/Binding-Applications-to-a-Service-Instance
+
+Here you can find some of our implementatuion examples:
+
+* [Java] (https://github.com/trustedanalytics/user-management/blob/8fc3dd4bec931d446ab05a04dbd84b4a4049ed26/src/main/java/org/trustedanalytics/user/invite/config/StorageConfig.java#L90-L112#bind) <br />
+* [Golang] (https://github.com/trustedanalytics/application-broker/blob/3593eca396848e9fe67709df3fe8508d6d69fcd0/dao/mongo.go#L17-L51#bind) <br />
+* [Python] (https://github.com/trustedanalytics/data-catalog/blob/master/data_catalog/configuration.py#L30-L108#bind) <br />
+
+In case of Spring projects we also encourage you to read [Cloud Foundry documentation] (https://docs.cloudfoundry.org/buildpacks/java/spring-service-bindings.html#bind) on this topic. <br />
+
+**Q: How can I use the scoring engine API in my application?**<br />
+
+**Q: My data is in a SQL database, how can I easily load it into TAP?**<br />
+You can schedule a data import from your SQL database. Please check [the data import section](Job-scheduler) for details.
 
 **Q: How do I deploy an example Java application?**<br />
     ```
@@ -64,22 +101,6 @@ chmod +x cf-ssh
 **Q: How do I view the current memory and disk usage of Cloud Foundry?**<br />
 
 Log on to the jumpbox and run the _dea_ads_ command.
-
-**Q: I created a service on Marketplace. How can I access it from my application?**<br />
-
-Firstly, you need to bind your application to the service. It can be done by executing the following command:
-
-	cf bind-service your-app your-service
-
-Then you need to restart or in some cases re-push you application. As a result credentials for the service instance will be delivered to the application runtime in environment variable named VCAP_SERVICES. For more explicit information read [the Cloud Foundry docs.] (http://docs.cloudfoundry.org/devguide/services/application-binding.html#bind)
-
-Here you can find some of ours implementatuion examples:
-
-* [Java] (https://github.com/trustedanalytics/user-management/blob/8fc3dd4bec931d446ab05a04dbd84b4a4049ed26/src/main/java/org/trustedanalytics/user/invite/config/StorageConfig.java#L90-L112#bind) <br>
-* [Golang] (https://github.com/trustedanalytics/application-broker/blob/3593eca396848e9fe67709df3fe8508d6d69fcd0/dao/mongo.go#L17-L51#bind) <br>
-* [Python] (https://github.com/trustedanalytics/data-catalog/blob/master/data_catalog/configuration.py#L30-L108#bind) <br>
-
-In case of Spring projects we also encourage you to read [Cloud Foundry documentation] (https://docs.cloudfoundry.org/buildpacks/java/spring-service-bindings.html#bind) on this topic. <br>
 
 **Q: How do I view all the current logs within Cloud Foundry?**<br />
 
@@ -178,3 +199,38 @@ Others
 **Q. What elements of this project are in use by other projects?**
 
 Many of the ~30 projects comprising the Trusted Analytics Platform depend on each other; some can stand on their own. All of the projects are developed in a way that should minimize the effort to use them independently.
+
+
+## Analytics Toolkit FAQs
+
+**Q: How can I use data from a SQL database to build my model?**<br />
+Data from the database would need to be loaded into a dataframe for use in training a model.  This is done using import of data through JDBC into or out of a frame.
+
+The import from JDBC is accomplished through the "JdbcTable" command which is used to retrieve the data from a JDBC data source.
+
+      jdbcTable = ta.JdbcTable ("test", jdbc:sqlserver://localhost/SQLExpress;databasename=somedatabase;user=someuser;password=somepassord",
+                              "com.microsoft.sqlserver.jdbc.SQLServerDriver",
+                              "select * FROM SomeTable")
+
+
+
+**Q: After loading data into a data frame, how can I add/delete/update columns?**<br />
+
+Within the Analytics Toolkit there is a command add_columns for adding columns to a dataframe: 
+ 
+      frame.add_columns(lambda row: row.age - 18, ('adult_years', ta.int32))
+
+Multiple columns can also be added using the same command:
+
+      frame.add_columns(lambda row: [row.tenure / float(row.age), row.tenure / float(row.adult_years)], [("of_age", ta.float32), ("of_adult", ta.float32)])
+
+For deleting a column there is drop_columns command:
+
+      frame.drop_columns(["column_b", "column_d"])
+
+There are also flatten and unflatten commands when dealing with frames that let you spread data to multiple rows based upon a string delimiter.
+
+      frame.flatten_columns(['b','c'], ',')
+
+
+  
