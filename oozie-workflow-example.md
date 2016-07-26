@@ -56,8 +56,15 @@ your organization guid and table name. Those will be used to specify table in oo
 
 * Process will look as shown below. Selected button moves you to logs.
 
-![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/workflow_in_progres.jpg)
+![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/workflow_in_progress.jpg)
 
+* Finished workflow.
+ 
+![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/done_100.jpg)
+
+* Results.
+
+![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/final_results.jpg)
 
 
 
