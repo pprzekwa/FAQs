@@ -30,7 +30,7 @@ your organization guid and table name. Those will be used to specify tablename p
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/choose_sql_sript.jpg)
 
-* You can upload your script to HDFS or select it if already exist.
+* Upload your script to HDFS or select it if already exist.
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/select_script.jpg)
 
@@ -38,7 +38,7 @@ your organization guid and table name. Those will be used to specify tablename p
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/add_sql_script.jpg)
 
-* (Optional) It is possible to preview and edit your script by clicking on small arrow distinguished on the picture below.
+* (Optional) It is possible to preview and edit script by clicking on small arrow distinguished on the picture below.
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/sql_preview.jpg)
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/sql_code_preview.jpg)
