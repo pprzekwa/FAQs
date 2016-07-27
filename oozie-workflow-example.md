@@ -26,7 +26,7 @@ your organization guid and table name. Those will be used to specify tablename p
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/drag_hive_server.jpg)
 
-* Choose your file with sql query.
+* Choose file with sql query.
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/choose_sql_sript.jpg)
 
