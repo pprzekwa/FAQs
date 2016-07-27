@@ -1,15 +1,16 @@
 # Creating Oozie workflow
+Creating simple workflow with Hive query as example of using Oozie with Hue.
 
 * Login to platform and find **Data catalog** -> **Submit Transfer** tab. 
  Fill the form and confirm by clicking on the **Upload** button.
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/upload_file.jpg)
 
-* After successful upload switch to **Data sets** tab. Filter for your dataset and open it in hue by clicking **+View button**.
+* After successful upload switch to **Data sets** tab. Filter for your dataset and open it in Hue by clicking **+View button**.
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/tap_view.jpg)
 
-* You will be redirected to the hue's **Metastore Manager**. At this step it is important to copy
+* You will be redirected to the Hue's **Metastore Manager**. At this step it is important to copy
 your organization guid and table name. Those will be used to specify tablename parameter in oozie workflow.
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/org_table_copy.jpg)
