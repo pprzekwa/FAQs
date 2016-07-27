@@ -1,35 +1,32 @@
-# Oozie
+# Creating Oozie workflow
 
-This short document will show how to use oozie workflow editor.
-
-* After login to platform at first you need to go to Data catalog tab. 
-Choose Submit Transfer, specify file (using link or uploading from your file system),
-add title, select category and upload to HDFS by cliking blue Upload button.
+* Login to platform and find **Data catalog** -> **Submit Transfer** tab. 
+ Fill the form and confirm by clicking on the **Upload** button.
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/upload_file.jpg)
 
-* Go to Data sets tab, filter for your dataset and click +View button.
+* After successful upload switch to **Data sets** tab. Filter for your dataset and open it in hue by clicking **+View button**.
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/tap_view.jpg)
 
-* You will be redirected to the hue's Metastore Manager. At this step it is important to copy
-your organization guid and table name. Those will be used to specify table in oozie workflow.
+* You will be redirected to the hue's **Metastore Manager**. At this step it is important to copy
+your organization guid and table name. Those will be used to specify tablename parameter in oozie workflow.
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/org_table_copy.jpg)
 
-* Select `Workflows -> Editors -> Workflows` from the menu bar.
+* Select **Workflows** -> **Editors** -> **Workflows** from the menu bar.
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/go_to_workflows.jpg)
 
-* Click on create new workflow button
+* Create new workflow.
 
 # TODO - add screen
 
-* Drag HiveServer2 Script to the action filed.
+* Drag **HiveServer2 Script** to the action filed.
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/drag_hive_server.jpg)
 
-* Choose your sql script.
+* Choose your file with sql query.
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/choose_sql_sript.jpg)
 
@@ -37,32 +34,33 @@ your organization guid and table name. Those will be used to specify table in oo
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/select_script.jpg)
 
-* Confirm by clicking Add button.
+* Confirm by clicking **Add** button.
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/add_sql_script.jpg)
 
-* You can preview and edit your script by clicking small arrow button selected on the picture below.
+* (Optional) It is possible to preview and edit your script by clicking on small arrow distinguished on the picture below.
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/sql_preview.jpg)
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/sql_code_preview.jpg)
 
-* Then add your parameters and save workflow by clicking on the save button in the right corner.
+* Add your parameters and save workflow by clicking on the save button in the right corner. <br />
+**NOTE:** here you need to use previously copied organization guid and table name by passing them in `<organization_guid>.<table_name>` form as tablename parameter. 
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/save_workflow.jpg)
 
-* To start click start button and subbmit.
+* To start use start button and subbmit.
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/start_workflow.jpg)
 
-* Process will look as shown below. Selected button moves you to logs.
+* Process will look as shown below. (Button in red rectangle moves you to **logs**)
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/workflow_in_progress.jpg)
 
-* Finished workflow.
+* See results by clicking on button in red rectangle.
  
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/done_100.jpg)
 
-* Results.
+* Results of our query are shown below.
 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/final_results.jpg)
 
