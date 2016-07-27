@@ -20,7 +20,7 @@ your organization guid and table name. Those will be used to specify tablename p
 
 * Create new workflow.
 
-# TODO - add screen
+![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/create_workflow.jpg)
 
 * Drag **HiveServer2 Script** to the action filed.
 
