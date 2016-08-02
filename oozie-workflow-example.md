@@ -15,9 +15,9 @@ your organization guid and table name. Those will be used to specify tablename p
 
 Rest of this preocedure to one shown on offcial Hue's youtube channel.
 
-[![hue](https://www.youtube.com/watch?v=l7K-2M_StsY/0.jpg)](https://www.youtube.com/watch?v=l7K-2M_StsY)
+[![hue](https://img.youtube.com/vi/l7K-2M_StsY/0.jpg)](https://www.youtube.com/watch?v=l7K-2M_StsY)
 
-**NOTE:** here you need to use previously copied organization guid and table name by passing them in `<organization_guid>.<table_name>` form as tablename parameter. 
+**NOTE:** You will need to use previously copied organization guid and table name by passing them in `<organization_guid>.<table_name>` form as tablename parameter. 
 
 
 
