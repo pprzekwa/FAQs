@@ -27,6 +27,20 @@ Running Python scripts is similar to running bash. You need to create shell acti
 
 **NOTE:** While running your scripts make sure you don't have hidden characters in your shebang.
 
+### Runing Spark action in Oozie
+
+To run Spark action you need to drag it to desired workflow field when creating your Workflow in UI.
+
+![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/spark-job-creation.jpg)
+
+Information how to fill Spark Master and Mode fields can be found [here](http://gethue.com/use-the-spark-action-in-oozie/).
+To add your jar file click on the button with two dots placed next to **Jar/py files** filed, select **Workspace** and then **lib** catalog. Upload your jar file inside lib directory. After returning to Workflow edition view ensure that in your `Jar/py files` field you have only jar file name (<file>.jar) - it is important because jars are searched by default in `Workspace/lib` directory and forms like "lib/<your-jar-file>.jar" are not allowed.
+
+![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/upload-path.jpg)
+
+To test this solution you can create simple spark job following [this Spark Quick Start](https://spark.apache.org/docs/1.6.0/quick-start.html#self-contained-applications).
+
+
 
 
 
