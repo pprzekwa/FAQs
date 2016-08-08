@@ -31,14 +31,15 @@ Running Python scripts is similar to running bash. You need to create shell acti
 
 To run Spark action you need to drag it to desired workflow field when creating your Workflow in UI.
 
-![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/spark-job-creation.jpg)
+![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/spark-job-creation.png)
+<br />
+![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/upload-path.png)
 
-Information how to fill Spark Master and Mode fields can be found [here](http://gethue.com/use-the-spark-action-in-oozie/).
-To add your jar file click on the button with two dots placed next to **Jar/py files** filed, select **Workspace** and then **lib** catalog. Upload your jar file inside lib directory. After returning to Workflow edition view ensure that in your `Jar/py files` field you have only jar file name (<file>.jar) - it is important because jars are searched by default in `Workspace/lib` directory and forms like "lib/<your-jar-file>.jar" are not allowed.
+Information how to fill Spark Master and Mode can be found [here](http://gethue.com/use-the-spark-action-in-oozie/).
+To add your jar file click on the button with two dots placed next to **Jar/py files** filed, select **Workspace** and then **lib** catalog. Upload your jar file inside **lib/** directory. After returning to Workflow view ensure that your **Jar/py files** field has only jar file name (<file>.jar) - it is important because jars are searched by default in **Workspace/lib/** directory and paths like **lib/<your-jar-file>.jar** are not allowed. Give a name to your action, specify main class and add arguments if needed. Last step is to save and run your newly created workflow.
 
-![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/upload-path.jpg)
+**Note:** To test this solution you can create simple spark job following [this Spark Quick Start tutorial](https://spark.apache.org/docs/1.6.0/quick-start.html#self-contained-applications).
 
-To test this solution you can create simple spark job following [this Spark Quick Start](https://spark.apache.org/docs/1.6.0/quick-start.html#self-contained-applications).
 
 
 
