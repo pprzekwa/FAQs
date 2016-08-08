@@ -36,7 +36,7 @@ To run Spark action you need to drag it to desired workflow field when creating 
 ![](https://github.com/pprzekwa/FAQs/blob/DPNG-9509-oozie-usage/images/oozie_man/upload-path.png)
 
 Information how to fill Spark Master and Mode can be found [here](http://gethue.com/use-the-spark-action-in-oozie/).
-To add your jar file click on the button with two dots placed next to **Jar/py files** filed, select **Workspace** and then **lib** catalog. Upload your jar file inside **lib/** directory. After returning to Workflow view ensure that your **Jar/py files** field has only jar file name (<file>.jar) - it is important because jars are searched by default in **Workspace/lib/** directory and paths like **lib/<your-jar-file>.jar** are not allowed. Give a name to your action, specify main class and add arguments if needed. Last step is to save and run your newly created workflow.
+To add your jar file click on the button with two dots placed next to **Jar/py files** filed, select **Workspace** and then **lib** catalog. Upload your jar file inside **lib/** directory. After returning to Workflow view ensure that your **Jar/py files** field has only jar name (`<file>.jar`) - it is important because jars are searched by default in **Workspace/lib/** directory and paths like **lib/<your-jar-file>.jar** are not allowed. Give a name to your action, specify main class and add arguments if needed. Last step is to save and run your newly created workflow.
 
 **Note:** To test this solution you can create simple spark job following [this Spark Quick Start tutorial](https://spark.apache.org/docs/1.6.0/quick-start.html#self-contained-applications).
 
